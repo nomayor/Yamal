@@ -3,7 +3,7 @@ Yamal Models for Juniper
 
 This is a django-based project. Django-related files are in the branch: Django Files.
 
-I use the Yamal, found in the branch Yamal-Models, models as follows:
+I use the Yamal models, found in the branch Yamal-Models, as follows:
 
 1. Upon login, the user is presented with the html page: MainPageLogging.html
 2. There he can select a series of options, to either view the status of the Juniper device, or configure something on it.
