@@ -18,4 +18,4 @@ For configuration, the PHP files cross-check what the user is trying to do, with
 The PHP files are found in the branch: PHP-Programs.
 
 
-Let me make it 100% that I am *Not* a programmer. So do not feel bad if you laugh at my "code". 
+Let me make it 100% clear that I am *Not* a programmer. So do not feel bad if you laugh at my "code". 
