@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+
+<head>
+
+  <title>ICC Firewall Self Care</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script async src="{% static "/static/ei.js" %}"></script>
+  <script src="{% static "/static/jquery-1.11.3.min.js" %}"></script>
+
+  <link rel="stylesheet" href="{% static '/static/w3.css' %}">  
+
+  <link rel="stylesheet" href="{% static '/static/CascadedStyle.css' %}" type="text/css">
+
+  <script src="{% static "/static/bootstrap.min.js" %}"></script>
+  <link href="{% static "/static/bootstrap.min.css" %}" rel="stylesheet">
+  
+</head>
+
+
+{% include 'session_security/all.html' %}
+
+<head>
+    <title>ICC Firewall</title>   
+</head>
+ 
+<script type="text/javascript">
+
+function updateClock (){
+  
+  var currentTime = new Date ( );
+ 
+  //Get the hours for updating clock
+  var currentHours = currentTime.getHours ();
+ 
+  //Get the minuts for updating clock
+  var currentMinutes = currentTime.getMinutes ();
+ 
+  //Get the secconds for updating clock
+  var currentSeconds = currentTime.getSeconds ();
+ 
+  // Pad the minutes and seconds with leading zeros, if required
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+ 
+  // Choose either "AM" or "PM" as appropriate
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+ 
+  // Convert the hours component to 12-hour format if needed
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+ 
+  // Convert an hours component of "0" to "12"
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+ 
+  // Compose the string for display
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+ 
+  // Update the time display
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+</script>
+ 
+<body onload="updateClock(); setInterval('updateClock()', 1000 );">
+</body>
+<div class="container">
+<header style ="vertical-align: middle;">
+ 
+<h1 style="font-size: 30px; position:fixed; vertical-align:middle;">
+
+    <img src="{% static "/static/interoute_logo.jpg" %}" alt="interoute_logo" 
+        height="50" width="120" 
+        style ="position:fixed; top:1mm; left:3%;"/>
+
+ 
+
+<p style = "position: relative;
+  top: 50%;
+  transform: translateY(-35%);
+  left: 380%;"
+>Fusion PE Portal</p>
+
+</h1>
+
+
+
+</header>
+</div>
+<br/>
+
+<div style="margin-top:25px;" class="container-fluid">
+<div class="span6 offset2" style="margin-top:60px;">
+
+  <h1 style="font-size:large;">Welcome.</br>Please login to your ICC FW Management interface.</h1>
+
+  <div class="span6 offset2" style="margin-top:20px;">
+
+    <form id="login_form" method="post">
+          <table>
+            <tbody>
+            {% csrf_token %}
+            
+            <tr><td style="width: 90px;"><b>Username: </b></td><td><input type="text" name="username" value="" size="50" /></td></tr>
+            
+            <tr><td style="width: 90px;"><b>Password:  </b></td><td><input type="password" name="password" value="" size="50"/></td></tr>
+       
+        </tbody>
+      </table>
+
+  <div style="margin-top:20px;">
+            <input class="btn btn-success" type='submit' value='Submit' />
+  </div>
+       
+    </form>
+
+  </div>
+  
+
+</div>
+</div>
+</div>
+
+<footer style ="position:fixed; bottom:0px; text-align: right;">
+    <b>Copyright Interoute.com</b><span style="padding-left:42%;"></span><span id="clock">&nbsp;</span>            
+</footer>
+
+</body>
+</html>
+
