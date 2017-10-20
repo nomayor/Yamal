@@ -1,0 +1,12 @@
+vSRXInterfaces:
+ rpc: get-interface-information
+ item: .//logical-interface
+ key: name
+ view: ShowInterfacesView
+
+ShowInterfacesView:
+ fields:
+  Name: name
+  ZONE_NAME: logical-interface-zone-name
+  IP_ADDRESS: address-family/interface-address/ifa-local
+  VLAN: link-address 

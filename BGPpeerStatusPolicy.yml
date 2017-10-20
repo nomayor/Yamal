@@ -1,0 +1,20 @@
+---
+### ------------------------------------------------------
+### show bgp neighbor
+### ------------------------------------------------------
+
+BGPpeerStatusPolicy:
+  rpc: get-bgp-neighbor-information
+  item: bgp-peer
+  key: peer-address
+  view: BGPpeerPolicy
+
+BGPpeerPolicy:
+  fields:
+    peer-address: peer-address
+    peer-as: peer-as
+    peer-type: peer-type
+    peer-state: peer-state
+    export-policy: .//bgp-option-information/export-policy
+    import-policy: .//bgp-option-information/import-policy
+    flap-count: flap-count

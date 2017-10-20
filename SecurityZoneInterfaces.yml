@@ -1,0 +1,25 @@
+### ---------------------------------------------------------------------------
+### SRX zone-to-zone security zone interfaces
+### ---------------------------------------------------------------------------
+
+SecurityZoneInterfaces:
+  get: security/zones/security-zone
+  key: name 
+  item: interfaces
+  view: SecurityZoneInterfacesView
+
+SecurityZoneInterfacesView:
+ zone: name
+ fields:
+  interface: name
+
+
+
+###SecurityZoneInterfaces:
+###  get: security/zones/security-zone/interfaces 
+###  key: name
+###  view: SecurityZoneInterfacesView
+
+###SecurityZoneInterfacesView:
+### fields:
+###  InterfaceName: name

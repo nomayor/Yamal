@@ -1,0 +1,24 @@
+### ---------------------------------------------------------------------------
+### SRX zone-to-zone security policy rules
+### ---------------------------------------------------------------------------
+
+PolicyRuleTable:
+  get: security/policies/policy/policy 
+  required_keys:
+    policy:
+      - from-zone-name
+      - to-zone-name
+  view: policyRuleView
+
+policyRuleView:
+  name: name
+  groups:
+    match: match
+    then: then
+  fields_match:
+    matchsrc: source-address
+    matchdst: destination-address
+    matchapp: application
+  fields_then:
+    log_init : { log/session-init: flag }
+    action : deny | permit  

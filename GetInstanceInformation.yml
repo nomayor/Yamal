@@ -1,0 +1,20 @@
+---
+### ------------------------------------------------------
+### show route instance detail
+### ------------------------------------------------------
+
+GetInstanceInformation:
+  rpc: get-instance-information
+  item: instance-core
+  key: instance-name
+  view: GetInstanceInformationView
+
+GetInstanceInformationView:
+  fields:
+    instance-name: instance-name
+    route-distinguisher: .//route-distinguisher
+    vrf-import: .//vrf-import
+    vrf-export: .//vrf-export
+    interface-name: .//interface-name
+
+
