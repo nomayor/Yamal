@@ -16,6 +16,3 @@ I use the Yamal models, found in the branch Yamal-Models, as follows:
 For configuration, the PHP files cross-check what the user is trying to do, with what is in the network. For example if a VLAN number is already in use on an interface, it will not send to the SRX the configuration, it will block it. There are also multiple other checks, trying to ensure that what the user is trying to do, makes sense. As an example, if the user is attempting to create a static route, the next hop of which is included in the subnet for which he adds the static route, the corresponding php file exits and uses the "StaticRouteOverlapTest.py" small programm, to check if the two overlap. If they do, no configuration is sent to the router.
 
 The PHP files are found in the branch: PHP-Programs.
-
-
-Let me make it 100% clear that I am *Not* a programmer. So do not feel bad if you laugh at my "code". 
